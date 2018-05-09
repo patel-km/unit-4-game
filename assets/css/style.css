@@ -1,0 +1,57 @@
+h1 {
+    color: #B5A642;
+    font-size: 40px;
+}
+
+h3 {
+    font-size:26px;
+}
+
+p {
+    font-size: 18px;
+}
+
+#instructions {
+    position: relative;
+    width:700px;
+    height:300px;
+}
+
+#bg {
+    background-color:#666;
+    opacity: 0.3;
+    position: absolute;
+    width:100%;
+    height:100%;
+    padding:20px;
+}
+
+#text {
+    position: absolute;
+    width:100%;
+    height:100%;
+    padding: 20px;
+}
+
+#sumTxt {
+    display: block;
+    margin: 20px;
+}
+
+
+#attribute {
+    font-size: 10px;
+    color: #666;
+    text-decoration: none;
+    align-content: center;
+}
+
+#footer{
+    background-color: gainsboro;
+    height:20px;
+    width: 100%;
+    padding-top: 10px;
+    bottom:0;
+    position: absolute;
+    text-align: center;
+}
