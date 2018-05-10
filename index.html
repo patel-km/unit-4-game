@@ -37,13 +37,17 @@
 
                 <div id="numBox"></div>
 
-                <div id="crystal"></div>
+                <div id="crystal">
                     <img src="assets/images/SVG/gem1.svg" id="red">
                     <img src="assets/images/SVG/gem2.svg" id="blue">
                     <img src="assets/images/SVG/gem3.svg" id="green">
                     <img src="assets/images/SVG/gem4.svg" id="purple">
+                </div>
 
-                <div id="scoreBox"></div>
+                <div id="scoreBox">
+                    <p>Wins:</p>
+                    <p>Losses:</p>
+                </div>
                 
                 <p id="sumTxt">Your sum:</p>
                 
@@ -53,7 +57,7 @@
             
         <script>
 
-            //wait until screen loaded to do anything
+        //wait until screen loaded to do anything
 
             var numBox= getNumber (19,120);
             var red = getNumber (1,12);
@@ -61,6 +65,8 @@
             var green = getNumber (1,12);
             var purple = getNumber (1,12);
             var sum = 0;
+            var win = 0;
+            var lose = 0;
 
             
         //Print random number in the div "numBox"
@@ -71,13 +77,16 @@
                 return Math.floor(Math.random() * (n2- n1) + n1);
             }
             
+        //On each click:
+            //Display click value in the sum box
+            //check if win/lose each time click
+            //Display/record win and loss, based on defined conditions
 
-        //Display click value in the sum box
             $("#red").on("click", function () {
                 sum = sum + red;
                 $("#sumBox").text(sum);
             });
-            
+           
             $("#blue").on("click", function () {
                 sum = sum + blue;
                 $("#sumBox").text(sum);
@@ -93,18 +102,16 @@
                 $("#sumBox").text(sum);
             });
             
-
-        
-        //check if win/lose each time click
-        //crystal value stays the same in one game, until new game starts
-
-        //Record win and loss
-            //what conditions = win?
-                //sum box value === numBox value
-                
-            //what conditions = lose?
-                //sum box value > num box value
-            //display "you won/lost" message
+            
+            $("#crystal").on("click", "img", function () {
+                if (sum > numBox) {
+                        $("#scoreBox").text("You lost!");
+                        lose++;
+                    } else if (sum === numBox) {
+                        $("#scoreBox").text("You won!");
+                        $("#").text("Wins:"+ win++);
+                    }
+            });
             //pull new number to restart game (with new crystal numbers, too)
         </script>
     
