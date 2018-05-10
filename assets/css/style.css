@@ -11,6 +11,11 @@ p {
     font-size: 18px;
 }
 
+img {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
 #instructions {
     position: relative;
     width:700px;
@@ -35,9 +40,36 @@ p {
 
 #sumTxt {
     display: block;
-    margin: 20px;
+    margin-top: 40px;
+    margin-left: 90px;
 }
 
+#sumBox {
+    height: 150px;
+    width: 150px;
+    background-color: darkkhaki;
+    position: absolute;
+    left: 50px;
+}
+
+#scoreBox {
+    height: 150px;
+    width: 100px;
+    background-color: lightgreen;
+    position: absolute;
+    left: 400px;
+    bottom: 195px;
+}
+
+#numBox {
+    height: 150px;
+    width: 150px;
+    background-color: wheat;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    position:relative;
+    left:50px;
+}
 
 #attribute {
     font-size: 10px;
@@ -52,6 +84,7 @@ p {
     width: 100%;
     padding-top: 10px;
     bottom:0;
-    position: absolute;
+    position: fixed;
     text-align: center;
+    margin-top: 20px;
 }

@@ -7,6 +7,7 @@
     <title>Crystal Game</title>
     <link rel="stylesheet" type ="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type ="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -31,11 +32,16 @@
                     <br>
             </div>
             <div id="bg"></div>
+            <img src="assets/images/asanoha-400px.png">
         </div>
 
                 <div id="numBox"></div>
 
-                <div id="crystals"></div>
+                <div id="crystal"></div>
+                    <img src="assets/images/SVG/gem1.svg" id="red">
+                    <img src="assets/images/SVG/gem2.svg" id="blue">
+                    <img src="assets/images/SVG/gem3.svg" id="green">
+                    <img src="assets/images/SVG/gem4.svg" id="purple">
 
                 <div id="scoreBox"></div>
                 
@@ -45,6 +51,31 @@
 
             <div id="footer"><a id="attribute" href="https://www.vecteezy.com/">Gems from Free Vector Art by www.vecteezy.com</a></div>
             
+        <script>
+
+        //Select a random number and put it in the div "numBox"
+            $("numBox").m
+            var number = 1 + Math.floor(Math.random() * 6)
+            var randomNumber = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+            function getNum(19, 120) {
+                min = Math.ceil(19);
+                max = Math.floor(120);
+                return Math.floor(Math.random() * (120 - 19)) + 19;
+            }
+        //Assign a random value to each crystal on click
+            $("#red").on("click")
+
+        //Display click value in the sum box, and keep adding value of crystal click
+
+        //Record win and loss
+            //what conditions = win?
+                //sum box value === numBox value
+            //what conditions = lose?
+                //sum box value > num box value
+            //display "you won/lost" message
+            //pull new number to restart game (with new crystal numbers, too)
+        </script>
     
 </body>
 </html>
