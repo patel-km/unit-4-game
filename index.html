@@ -53,24 +53,55 @@
             
         <script>
 
-        //Select a random number and put it in the div "numBox"
-            $("numBox").m
-            var number = 1 + Math.floor(Math.random() * 6)
-            var randomNumber = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+            //wait until screen loaded to do anything
 
-            function getNum(19, 120) {
-                min = Math.ceil(19);
-                max = Math.floor(120);
-                return Math.floor(Math.random() * (120 - 19)) + 19;
+            var numBox= getNumber (19,120);
+            var red = getNumber (1,12);
+            var blue = getNumber (1,12);
+            var green = getNumber (1,12);
+            var purple = getNumber (1,12);
+            var sum = 0;
+
+            
+        //Print random number in the div "numBox"
+            $("#numBox").text(numBox);
+
+        //Assign a random value to numBox and each crystal
+            function getNumber (n1, n2) {
+                return Math.floor(Math.random() * (n2- n1) + n1);
             }
-        //Assign a random value to each crystal on click
-            $("#red").on("click")
+            
 
-        //Display click value in the sum box, and keep adding value of crystal click
+        //Display click value in the sum box
+            $("#red").on("click", function () {
+                sum = sum + red;
+                $("#sumBox").text(sum);
+            });
+            
+            $("#blue").on("click", function () {
+                sum = sum + blue;
+                $("#sumBox").text(sum);
+            });
+
+            $("#green").on("click", function () {
+                sum = sum + green;
+                $("#sumBox").text(sum);
+            });
+
+            $("#purple").on("click", function () {
+                sum = sum + purple;
+                $("#sumBox").text(sum);
+            });
+            
+
+        
+        //check if win/lose each time click
+        //crystal value stays the same in one game, until new game starts
 
         //Record win and loss
             //what conditions = win?
                 //sum box value === numBox value
+                
             //what conditions = lose?
                 //sum box value > num box value
             //display "you won/lost" message
