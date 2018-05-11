@@ -71,6 +71,11 @@
             var win = 0;
             var lose = 0;
 
+        //Assign a random value to numBox and each crystal
+        function getNumber (n1, n2) {
+                return Math.floor(Math.random() * (n2- n1) + n1);
+            }
+
         //Sets up win and lose score
         $("#scoreCount").html("<p> Wins: " + win + "</p>"+ 
                             "<p> Losses: " + lose + "</p>");
@@ -78,11 +83,8 @@
         //Print random number in the div "numBox"
             $("#numBox").text(numBox);
 
-        //Assign a random value to numBox and each crystal
-            function getNumber (n1, n2) {
-                return Math.floor(Math.random() * (n2- n1) + n1);
-            }
-            
+        
+        
         //On each click:
             //Display click value in the sum box
             //check if win/lose each time click
@@ -114,17 +116,28 @@
                         lose++;
                         $("#scoreMsg").html("<p>You lost!</p>");
                         $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");
-                        $("#numBox, #sumBox, #red, #blue, #green, #purple").empty();
+                        $("#sumBox").empty();
+                        
+                                               
+
                     } else if (sum === numBox) {
                         win++;
                         $("#scoreMsg").html("<p>You won!</p>");
-                        $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");
-                        $("#numBox, #sumBox, #red, #blue, #green, #purple").empty();
+                        $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");   
+                        $("#sumBox").empty();
+                          
                     }
                     
             });
 
-        
+            function reset () {
+                var numBox= getNumber (19,120);
+                var red = getNumber (1,12);
+                var blue = getNumber (1,12);
+                var green = getNumber (1,12);
+                var purple = getNumber (1,12);
+                var sum = 0;
+            };
             
         </script>
     
