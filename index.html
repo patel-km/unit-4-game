@@ -45,8 +45,11 @@
                 </div>
 
                 <div id="scoreBox">
-                    <p>Wins:</p>
-                    <p>Losses:</p>
+                    <div id="scoreMsg">
+                    </div>
+
+                    <div id="scoreCount">
+                    </div>
                 </div>
                 
                 <p id="sumTxt">Your sum:</p>
@@ -68,7 +71,10 @@
             var win = 0;
             var lose = 0;
 
-            
+        //Sets up win and lose score
+        $("#scoreCount").html("<p> Wins: " + win + "</p>"+ 
+                            "<p> Losses: " + lose + "</p>");
+       
         //Print random number in the div "numBox"
             $("#numBox").text(numBox);
 
@@ -102,17 +108,24 @@
                 $("#sumBox").text(sum);
             });
             
-            
+            //Win/Lose-- display outcome, keep score, and reset variables
             $("#crystal").on("click", "img", function () {
                 if (sum > numBox) {
-                        $("#scoreBox").text("You lost!");
                         lose++;
+                        $("#scoreMsg").html("<p>You lost!</p>");
+                        $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");
+                        $("#numBox, #sumBox, #red, #blue, #green, #purple").empty();
                     } else if (sum === numBox) {
-                        $("#scoreBox").text("You won!");
-                        $("#").text("Wins:"+ win++);
+                        win++;
+                        $("#scoreMsg").html("<p>You won!</p>");
+                        $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");
+                        $("#numBox, #sumBox, #red, #blue, #green, #purple").empty();
                     }
+                    
             });
-            //pull new number to restart game (with new crystal numbers, too)
+
+        
+            
         </script>
     
 </body>
