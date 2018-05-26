@@ -117,26 +117,27 @@
                         $("#scoreMsg").html("<p>You lost!</p>");
                         $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");
                         $("#sumBox").empty();
-                        
+                        reset();
                                                
 
                     } else if (sum === numBox) {
                         win++;
                         $("#scoreMsg").html("<p>You won!</p>");
                         $("#scoreCount").html("<p> Wins: " + win + "</p>"+ "<p> Losses: " + lose + "</p>");   
-                        $("#sumBox").empty();
-                          
+                        $("#sumBox").empty();  
+                        reset();
                     }
                     
             });
 
             function reset () {
-                var numBox= getNumber (19,120);
-                var red = getNumber (1,12);
-                var blue = getNumber (1,12);
-                var green = getNumber (1,12);
-                var purple = getNumber (1,12);
-                var sum = 0;
+                numBox= getNumber (19,120);
+                red = getNumber (1,12);
+                blue = getNumber (1,12);
+                green = getNumber (1,12);
+                purple = getNumber (1,12);
+                sum = 0;
+                $("#numBox").text(numBox);
             };
             
         </script>
